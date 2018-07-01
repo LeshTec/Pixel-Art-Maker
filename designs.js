@@ -3,23 +3,18 @@
 	var width, height, color;
 // When size is submitted by the user, call makeGrid()
 	$(documnet).ready(function() {
-	$("#sizePicker").submit(function (event)){
-		event.preventDefault();
-		height = $("inputHeight").val();
-		width = $("inputwidth").val();
-		makeGrid(height, width);
-	}
-
-	function makeGrid(x, y) {
-		$("tr").remove();
-
-	// Your code goes here!
-		for (var i = 1; 1 <= x; 1++){
-			$("#pixelCanvas").append("<tr id=table" + 1 + "></tr>");
-			for (var j = 1; j <= y; j++) {
-				$("#table" + 1).append("<td></td>");
+	$("#sizePicker").submit(function makeGrid(x, y) {
+		$("table tr").remove();
+		var rows =$("input_height").val();
+		var cols = $("input_width").val();
+		for (var i = 1; i <= rows; i++) {
+			$("table").append("<tr></tr>");
+			for (var j = 1; j <=cols; j++){
+				$("tr:last").append("<td></td>");
+				$("td").attr("class", "cells");
+			}
 		}
-	}
+		grid.preventDefault();
 
 	// Adding color to the cells
 	$("td").click(function addColor()){
