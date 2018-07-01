@@ -2,6 +2,7 @@
 // Select size input
 	var width, height, color;
 // When size is submitted by the user, call makeGrid()
+	$(documnet).ready(function() {
 	$("#sizePicker").submit(function (event)){
 		event.preventDefault();
 		height = $("inputHeight").val();
