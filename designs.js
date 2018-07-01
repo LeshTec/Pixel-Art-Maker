@@ -4,6 +4,7 @@
 // When size is submitted by the user, call makeGrid()
 	$(documnet).ready(function() {
 	$('#sizePicker').submit(function makeGrid(grid) {
+		$("table").remove();
   		var row_input = $('#input_height').val();
   		var col_input = $('#input_width').val();
   	for (var i = 1; i <= row_input; i++) {
